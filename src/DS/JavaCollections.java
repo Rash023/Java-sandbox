@@ -1,10 +1,7 @@
 package DS;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class JavaCollections {
     public static void main(String[] args) {
@@ -68,5 +65,67 @@ public class JavaCollections {
         System.out.println(st.peek());
         System.out.println(st);
         System.out.println(st.empty());
+
+        st.pop();
+
+        //implementing a queue
+        Queue<Integer> q=new LinkedList<>();
+        //offer method adds the value into the queue
+        q.offer(2);
+        q.offer(3);
+
+        //poll method removes the element from the q
+        System.out.println(q.poll());
+
+        //peek method returns the front element of the queue
+        System.out.println(q.peek());
+
+        System.out.println(q);
+
+        //iterating over the queue
+        while(!q.isEmpty()){
+            int val=q.poll();
+            System.out.println(val);
+        }
+
+        //implementing a dequeue
+        ArrayDeque<Integer> dq=new ArrayDeque<>();
+        dq.offerFirst(10);
+        dq.offerLast(20);
+        System.out.println(dq);
+
+        dq.pollFirst();
+        dq.pollLast();
+
+        dq.peekFirst();
+        dq.peekFirst();
+
+        //implementing a priority queue by default it is a min heap
+        PriorityQueue<Integer> pq=new PriorityQueue<>((a,b)-> b-a);
+        pq.offer(10);
+        pq.offer(1);
+        System.out.println(pq);
+
+
+        //Implementing a set
+        Set<Integer> s=new HashSet<>();
+        s.add(1);
+        s.add(1);
+        s.add(2);
+
+        //if you want a sorted set or ordered_set in c++
+        //Tree set internally stores the nodes in BST
+        Set<Integer> s1=new TreeSet<>();
+        s1.add(1);
+        s1.add(90);
+        s1.add(2);
+        System.out.println(s1);
+
+        // to create a set of objects of a class
+        // we need to override the hashcode method in that class and assign it to a unique id of that class
+
+
+
+
     }
 }
